@@ -115,6 +115,8 @@ contract Lottery is VRFConsumerBaseV2, KeeperCompatibleInterface {
         emit RequestedRaffleWinner(requestId);
     }
 
+    //fulfillRandom words will only be called if requestId exists ,that means it will only be called after performUpkeep
+
     function fulfillRandomWords(
         uint256, /*requestId */
         uint256[] memory randomWords
